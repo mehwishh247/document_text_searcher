@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Text Searcher</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+            color: #333;
+        }
+        .file-input {
+            display: inline-block;
+            margin-top: 20px;
+        }
+        input[type="file"] {
+            display: none; 
+        }
+        label {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        label:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Welcome to Document Text Searcher</h1>
+        <p>Upload a PDF document to extract and search its content.</p>
+
+        <!-- Upload Form -->
+        <form method="post" action="/upload" enctype="multipart/form-data">
+            <div class="file-input">
+                <!-- Label acts as a styled button -->
+                <label for="document">Choose a PDF File</label>
+                <input 
+                    type="file"
+                    id="document"
+                    name="document"
+                    accept=".pdf"
+                    onchange="this.form.submit()"
+                    required
+                >
+            </div>
+        </form>
+    </div>
+</body>
+</html>
